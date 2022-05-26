@@ -65,7 +65,7 @@ class ActivityObject:
             try:
                 value = kwargs[field.name]
                 if value in (None, MISSING, {}):
-                    raise KeyError("Missing required field", field.name)
+                    raise KeyError()
                 try:
                     is_subclass = issubclass(field.type, ActivityObject)
                 except TypeError:

@@ -29,7 +29,6 @@ class ReadingStatus(View):
             "want": "want.html",
             "start": "start.html",
             "finish": "finish.html",
-            "stop": "stop.html",
         }.get(status)
         if not template:
             return HttpResponseNotFound()
@@ -42,7 +41,6 @@ class ReadingStatus(View):
             "want": models.Shelf.TO_READ,
             "start": models.Shelf.READING,
             "finish": models.Shelf.READ_FINISHED,
-            "stop": models.Shelf.STOPPED_READING,
         }.get(status)
         if not identifier:
             return HttpResponseBadRequest()
